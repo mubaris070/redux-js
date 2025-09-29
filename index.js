@@ -31,15 +31,20 @@ store.subscribe(()=>{
 document.getElementById('count').innerText = state.value
 
 
+function increment(){
+   return{ type:"increment"}
+}
+
+function decrement(){
+   return{ type:"decrement"}
+}
+
+
 document.getElementById('increment').onclick = ()=>{
-    store.dispatch({
-        type:"increment"
-    });
+    store.dispatch(increment());
  }
 document.getElementById('decrement').onclick = ()=>{
-    store.dispatch({
-        type:"decrement",
-    });
+    store.dispatch(decrement());
 }
 
  console.log(state);
